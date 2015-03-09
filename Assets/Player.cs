@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Player : MonoBehaviour
 {
-
     //////////VARIABLES///////////
+    #region
 
     // Utility //
     float timer = 0f;
@@ -48,8 +48,8 @@ public class Player : MonoBehaviour
     public float attackDistance = 3.0f;
     Vector3 forward;
 
+    #endregion
     /////////////////////////////
-
 
     //////////FUNCTIONS///////////
 
@@ -87,6 +87,17 @@ public class Player : MonoBehaviour
         //GameGUI();
 	}
 
+    //Eat Critters//
+    void EatCritter()
+    {
+        if (Input.GetButtonDown("Eat") && breaking == false)
+        {
+            breaking = true;
+        }
+    }
+
+
+
     // Break Object //
     void BreakObject()
     {
@@ -106,31 +117,31 @@ public class Player : MonoBehaviour
             breakTimer = 0;
         }
 
-        if (breaking == true)
-        {
-            RaycastHit hit;
-            Vector3 hitRange = transform.position;
-            for (int i = 0; i < 31; i++)
-            {
-                hitRange.y = (transform.position.y + 2.0f) - 0.05f * i;
-                Ray ray = new Ray(hitRange, forward);
-
-                if (Physics.Raycast(ray, out hit))
-                {
-                    if (hit.collider != null)
-                    {
-                        if (Physics.Raycast(transform.position, forward, attackDistance) &&
-                                hit.collider.gameObject.tag == "obstacle")
-                        {
-                            hit.collider.enabled = false;
-                            Debug.Log("Destroyed the " + hit.collider.gameObject.name + "!");
-
-                            hit.collider.GetComponent<Obstacle>().Die();
-                        }
-                    }
-                }
-            }
-        }
+        //if (breaking == true)
+        //{
+        //    RaycastHit hit;
+        //    Vector3 hitRange = transform.position;
+        //    for (int i = 0; i < 31; i++)
+        //    {
+        //        hitRange.y = (transform.position.y + 2.0f) - 0.05f * i;
+        //        Ray ray = new Ray(hitRange, forward);
+        //
+        //        if (Physics.Raycast(ray, out hit))
+        //        {
+        //            if (hit.collider != null)
+        //            {
+        //                if (Physics.Raycast(transform.position, forward, attackDistance) &&
+        //                        hit.collider.gameObject.tag == "obstacle")
+        //                {
+        //                    hit.collider.enabled = false;
+        //                    Debug.Log("Destroyed the " + hit.collider.gameObject.name + "!");
+        //
+        //                    hit.collider.GetComponent<Obstacle>().Die();
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
     }
 
     // Sprint //
@@ -241,26 +252,19 @@ public class Player : MonoBehaviour
         }        
 	}
 
-	void OnCollisionEnter(Collision col)
-	{
-        if (col.gameObject.tag == "obstacle")
-        {
-            if (sprinting == false)
-            {
-                stumbling = true;
-                stumblingTimer = 0.0f;
 
-                //Auto run into
-                Debug.Log("Ran into " + col.gameObject.name + " and stumbled!", gameObject);
-            }
-            else
-            {
-                Debug.Log("Charged through the " + col.gameObject.name + "!", gameObject);
-            }
+    bool GetSprinting()
+    {
+        return sprinting;
+    }
 
-            Destroy(col.gameObject);           
-        }
-	}
+    public void SetStumbling()
+    {
+        stumbling = true;
+        stumblingTimer = 0.0f;
+    }
+
+
 }
 
 
