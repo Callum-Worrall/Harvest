@@ -7,7 +7,15 @@ public class GameMaster : MonoBehaviour {
 
     private Rect pauseMenuWindow;
 
+    float barDisplay = 0;
 
+    Vector2 pos = new Vector2(20,40);
+    
+    Vector2 size = new Vector2(60,20);
+    
+    Texture2D progressBarEmpty;
+    
+    Texture2D progressBarFull;
 
 	// Use this for initialization
 	void Start ()

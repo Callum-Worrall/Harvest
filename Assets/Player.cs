@@ -59,6 +59,13 @@ public class Player : MonoBehaviour
 		forward.x = 1.0f;
 		forward.y = 0.0f;
 		forward.z = 0.0f;
+
+		//speed.x = 1.5f;
+		//sprintSpeed.x = 2.5f;
+		//stumbleSpeed.x = 1.0f;
+        //
+		//jumpSpeed.y = 2.2f;
+		//gravity.y = -2.0f;
 	}
 	
 	// Update //
