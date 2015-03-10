@@ -1,23 +1,22 @@
 fileFormatVersion: 2
-guid: 6c9f3a644a6891846821f18bd2eec59e
+guid: ddcb3bb2545534d4ca1fb6e942f1c2a4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: MonsterWalking_SS_0
-    21300002: MonsterWalking_SS_1
-    21300004: MonsterWalking_SS_2
-    21300006: MonsterWalking_SS_3
-    21300008: MonsterWalking_SS_4
-    21300010: MonsterWalking_SS_5
-    21300012: MonsterWalking_SS_6
-    21300014: MonsterWalking_SS_7
-    21300016: MonsterWalking_SS_8
-    21300018: MonsterWalking_SS_9
-    21300020: MonsterWalking_SS_10
-    21300022: MonsterWalking_SS_11
+    21300000: MonsterEating_SS_0
+    21300002: MonsterEating_SS_1
+    21300004: MonsterEating_SS_2
+    21300006: MonsterEating_SS_3
+    21300008: MonsterEating_SS_4
+    21300010: MonsterEating_SS_5
+    21300012: MonsterEating_SS_6
+    21300014: MonsterEating_SS_7
+    21300016: MonsterEating_SS_8
+    21300018: MonsterEating_SS_9
+    21300020: MonsterEating_SS_10
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     linearTexture: 0
     correctGamma: 0
     fadeOut: 0
@@ -37,7 +36,7 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -55,125 +54,115 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: MonsterWalking_SS_0
+    - name: MonsterEating_SS_0
       rect:
         serializedVersion: 2
         x: 0
         y: 768
-        width: 229
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .584137619, y: .519797325}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_1
+    - name: MonsterEating_SS_1
       rect:
         serializedVersion: 2
         x: 256
         y: 768
-        width: 239
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .628680944, y: .519797325}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_2
+    - name: MonsterEating_SS_2
       rect:
         serializedVersion: 2
         x: 512
         y: 768
-        width: 246
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .658376932, y: .524746418}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_3
+    - name: MonsterEating_SS_3
       rect:
         serializedVersion: 2
-        x: 785
+        x: 768
         y: 768
-        width: 239
+        width: 256
         height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .693021536, y: .524746418}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_4
+    - name: MonsterEating_SS_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 512
+        y: 503
         width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 265
+      alignment: 9
+      pivot: {x: .584137619, y: .514343739}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_5
+    - name: MonsterEating_SS_5
       rect:
         serializedVersion: 2
-        x: 256
-        y: 512
+        x: 255
+        y: 508
         width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .638579488, y: .509898663}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_6
+    - name: MonsterEating_SS_6
       rect:
         serializedVersion: 2
         x: 512
         y: 512
         width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .653427601, y: .490101576}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_7
+    - name: MonsterEating_SS_7
       rect:
         serializedVersion: 2
         x: 768
         y: 512
         width: 256
         height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .697970629, y: .485152245}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_8
+    - name: MonsterEating_SS_8
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 250
         width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 247
+      alignment: 9
+      pivot: {x: .579188347, y: .474352151}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_9
+    - name: MonsterEating_SS_9
       rect:
         serializedVersion: 2
         x: 256
-        y: 256
+        y: 236
         width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 267
+      alignment: 9
+      pivot: {x: .623731613, y: .504745424}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_10
+    - name: MonsterEating_SS_10
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
+        x: 511
+        y: 237
         width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: MonsterWalking_SS_11
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 256
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 275
+      alignment: 9
+      pivot: {x: .663325787, y: .476963431}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

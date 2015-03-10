@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 553a310b10b278d459bb48f9c6ac453a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MonsterArm_Swipe_SS_0
+    21300002: MonsterArm_Swipe_SS_1
+    21300004: MonsterArm_Swipe_SS_2
+    21300006: MonsterArm_Swipe_SS_3
+    21300008: MonsterArm_Swipe_SS_4
+    21300010: MonsterArm_Swipe_SS_5
+    21300012: MonsterArm_Swipe_SS_6
+    21300014: MonsterArm_Swipe_SS_7
+    21300016: MonsterArm_Swipe_SS_8
+    21300018: MonsterArm_Swipe_SS_9
+    21300020: MonsterArm_Swipe_SS_10
+    21300022: MonsterArm_Swipe_SS_11
+    21300024: MonsterArm_Swipe_SS_12
+    21300026: MonsterArm_Swipe_SS_13
+    21300028: MonsterArm_Swipe_SS_14
+    21300030: MonsterArm_Swipe_SS_15
+    21300032: MonsterArm_Swipe_SS_16
+    21300034: MonsterArm_Swipe_SS_17
+    21300036: MonsterArm_Swipe_SS_18
+    21300038: MonsterArm_Swipe_SS_19
+    21300040: MonsterArm_Swipe_SS_20
+    21300042: MonsterArm_Swipe_SS_21
+    21300044: MonsterArm_Swipe_SS_22
+    21300046: MonsterArm_Swipe_SS_23
+    21300048: MonsterArm_Swipe_SS_24
+    21300050: MonsterArm_Swipe_SS_25
+    21300052: MonsterArm_Swipe_SS_26
+    21300054: MonsterArm_Swipe_SS_27
+    21300056: MonsterArm_Swipe_SS_28
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: MonsterArm_Swipe_SS_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 776
+        width: 60
+        height: 185
+      alignment: 9
+      pivot: {x: .795636594, y: .917772114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 771
+        width: 59
+        height: 194
+      alignment: 9
+      pivot: {x: .779172242, y: .924514949}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_2
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 805
+        width: 144
+        height: 151
+      alignment: 9
+      pivot: {x: .887143016, y: .944713473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_3
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 860
+        width: 168
+        height: 104
+      alignment: 9
+      pivot: {x: .884629369, y: .889850318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 508
+        width: 108
+        height: 185
+      alignment: 9
+      pivot: {x: .870952368, y: .938361764}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_5
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 500
+        width: 58
+        height: 196
+      alignment: 9
+      pivot: {x: .172324345, y: .920183122}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_6
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 586
+        width: 130
+        height: 103
+      alignment: 9
+      pivot: {x: .080911018, y: .844430864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_7
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 595
+        width: 96
+        height: 103
+      alignment: 9
+      pivot: {x: .130454376, y: .721420169}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 252
+        width: 68
+        height: 179
+      alignment: 9
+      pivot: {x: .760855734, y: .931775808}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_9
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 223
+        width: 80
+        height: 204
+      alignment: 9
+      pivot: {x: .183247, y: .916127205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_10
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 243
+        width: 62
+        height: 185
+      alignment: 9
+      pivot: {x: .786100328, y: .917771935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterArm_Swipe_SS_11
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 243
+        width: 62
+        height: 185
+      alignment: 9
+      pivot: {x: .826970279, y: .910923302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
