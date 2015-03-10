@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Player : MonoBehaviour
 {
@@ -45,8 +46,16 @@ public class Player : MonoBehaviour
     public bool breaking = false;
     float breakTimer = 0.0f;
     public float breakSwingTimer = 1.0f;
-    public float attackDistance = 3.0f;
+    public float attackDistance = 1.5f;
     Vector3 forward;
+
+	// Eating Variables //
+	public bool eating = false;
+	float eatTimer = 0.0f;
+	public float eatOpenTimer = 1.0f;
+
+	public List<GameObject> Children;
+
 
     #endregion
     /////////////////////////////
@@ -59,6 +68,17 @@ public class Player : MonoBehaviour
 		forward.x = 1.0f;
 		forward.y = 0.0f;
 		forward.z = 0.0f;
+
+		
+		foreach (Transform child in transform)
+		{
+			if (child.tag == "monAnim")
+			{
+				Children.Add(child.gameObject);
+			}
+		}
+
+		Debug.Log(Children.Count);
 	}
 	
 	// Update //
@@ -71,6 +91,7 @@ public class Player : MonoBehaviour
         {
             if (stumbling == false)
             {
+				//Children[0].gameObject.SetActive(true);
                 transform.position += speed * Time.deltaTime;
             }
             else
@@ -90,7 +111,7 @@ public class Player : MonoBehaviour
     //Eat Critters//
     void EatCritter()
     {
-        if (Input.GetButtonDown("Eat"))
+        if (Input.GetButtonDown("EatUp"))
         {
             GameObject[] critters = UnityEngine.Object.FindObjectsOfType<GameObject>();
 
@@ -99,10 +120,15 @@ public class Player : MonoBehaviour
                 if (critters[i].CompareTag("critter") == true)
 	            {
                     if (critters[i].transform.position.x < (transform.position.x + 2) &&
-                        critters[i].transform.position.x > (transform.position.x - 2))
+                        critters[i].transform.position.x > (transform.position.x - 2) &&
+					    critters[i].transform.position.y > (transform.position.y))
                     {
                         if (currentStamina < 10)
                         {
+							eating = true;
+							Children[0].gameObject.SetActive(false);
+							Children[3].gameObject.SetActive(true);
+
                             currentStamina += 1;
                             Destroy(critters[i]);
                             Debug.Log("Ate the " + critters[i].name + "!", gameObject);
@@ -111,6 +137,46 @@ public class Player : MonoBehaviour
 	            }
             }
         }
+
+		if (Input.GetButtonDown("EatDown"))
+		{
+			GameObject[] critters = UnityEngine.Object.FindObjectsOfType<GameObject>();
+			
+			for (int i = 0; i < critters.Length; i++)
+			{
+				if (critters[i].CompareTag("critter") == true)
+				{
+					if (critters[i].transform.position.x < (transform.position.x + 2) &&
+					    critters[i].transform.position.x > (transform.position.x - 2) &&
+					    critters[i].transform.position.y < (transform.position.y))
+					{
+						if (currentStamina < 10)
+						{
+							eating = true;
+							Children[0].gameObject.SetActive(false);
+							Children[3].gameObject.SetActive(true);
+							
+							currentStamina += 1;
+							Destroy(critters[i]);
+							Debug.Log("Ate the " + critters[i].name + "!", gameObject);
+						}
+					}
+				}
+			}
+		}
+
+		if (eating == true)
+		{
+			eatTimer += Time.deltaTime;
+		}
+
+		if (eating == true && eatTimer > eatOpenTimer)
+		{
+			eating = false;
+			Children[3].gameObject.SetActive(false);
+			Children[0].gameObject.SetActive(true);
+			eatTimer = 0;
+		}
     }
 
     // Break Object //
@@ -119,6 +185,9 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Attack") && breaking == false)
         {
             breaking = true;
+			Children[0].gameObject.SetActive(false);
+			Children[1].gameObject.SetActive(true);
+			Children[2].gameObject.SetActive(true);
         }
 
         if (breaking == true)
@@ -129,9 +198,30 @@ public class Player : MonoBehaviour
         if (breaking == true && breakTimer > breakSwingTimer)
         {
             breaking = false;
+			Children[1].gameObject.SetActive(false);
+			Children[2].gameObject.SetActive(false);
+			Children[0].gameObject.SetActive(true);
+
             breakTimer = 0;
         }
 
+		if (breaking == true)
+		{
+			GameObject[] obstacles = UnityEngine.Object.FindObjectsOfType<GameObject>();
+			
+			for (int i = 0; i < obstacles.Length; i++)
+			{
+				if (obstacles[i].CompareTag("obstacle") == true)
+				{
+					if(obstacles[i].transform.position.x < (transform.position.x + attackDistance) &&
+					   obstacles[i].transform.position.x > (transform.position.x))
+					{
+						Debug.Log("Destroyed the " + obstacles[i].name + "!");
+						Destroy(obstacles[i]);
+					}
+				}
+			}
+		}
         //if (breaking == true)
         //{
         //    RaycastHit hit;

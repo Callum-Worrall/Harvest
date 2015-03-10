@@ -9,8 +9,7 @@ public class Body : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        Physics.IgnoreCollision(GameObject.Find("Arm Collider").GetComponent<BoxCollider>(),
-            GetComponent<CapsuleCollider>());
+
 	}
 	
 	// Update is called once per frame
