@@ -42,7 +42,7 @@ public class Player : MonoBehaviour
     public float jumpCounter;
 
     // Attack Variables //
-    bool breaking = false;
+    public bool breaking = false;
     float breakTimer = 0.0f;
     public float breakSwingTimer = 1.0f;
     public float attackDistance = 3.0f;
@@ -59,13 +59,6 @@ public class Player : MonoBehaviour
 		forward.x = 1.0f;
 		forward.y = 0.0f;
 		forward.z = 0.0f;
-
-		//speed.x = 1.5f;
-		//sprintSpeed.x = 2.5f;
-		//stumbleSpeed.x = 1.0f;
-        //
-		//jumpSpeed.y = 2.2f;
-		//gravity.y = -2.0f;
 	}
 	
 	// Update //
@@ -86,24 +79,39 @@ public class Player : MonoBehaviour
         else
             transform.position += sprintSpeed * Time.deltaTime;
 
+        EatCritter();
         Stumble();
         Sprint();
 		Jump();
         BreakObject();
-
-        //GameGUI();
+        EatPrey();
 	}
 
     //Eat Critters//
     void EatCritter()
     {
-        if (Input.GetButtonDown("Eat") && breaking == false)
+        if (Input.GetButtonDown("Eat"))
         {
-            breaking = true;
+            GameObject[] critters = UnityEngine.Object.FindObjectsOfType<GameObject>();
+
+            for (int i = 0; i < critters.Length; i++)
+            {
+                if (critters[i].CompareTag("critter") == true)
+	            {
+                    if (critters[i].transform.position.x < (transform.position.x + 2) &&
+                        critters[i].transform.position.x > (transform.position.x - 2))
+                    {
+                        if (currentStamina < 10)
+                        {
+                            currentStamina += 1;
+                            Destroy(critters[i]);
+                            Debug.Log("Ate the " + critters[i].name + "!", gameObject);
+                        }
+                    }
+	            }
+            }
         }
     }
-
-
 
     // Break Object //
     void BreakObject()
@@ -157,10 +165,14 @@ public class Player : MonoBehaviour
         if (Input.GetButtonDown("Sprint") &&
                         sprinting == false &&
                             stumbling == false &&
-                                grounded == true)
+                                grounded == true &&
+                                    currentStamina > 0)
         {
             sprinting = true;
             sprintingTimer = 0.0f;
+            Debug.Log("Sprinting!", gameObject);
+
+            currentStamina -= 1;
         }
 
         if(sprinting == true)
@@ -196,9 +208,6 @@ public class Player : MonoBehaviour
 		{
 			grounded = false;
             jumpVelocity = 0.0f;
-            //jumpCounter = 0.0f;
-            //jumpVector = jumpSpeed;
-            //jumpVector = new Vector3(0, 0, 0);
 		}
 
         //Check if apex is reached and not on the ground, if true continue to jump
@@ -212,15 +221,6 @@ public class Player : MonoBehaviour
                 jumpSpeed.y);
 
             transform.position = new Vector3(transform.position.x, newPosition, transform.position.z);
-
-
-            //float increase = Mathf.PI / 100;
-            //jumpVector.y -= Mathf.Sin(jumpCounter);
-            //jumpCounter += increase;
-            //transform.position += jumpVector * Time.deltaTime;
-
-
-            //transform.position += jumpSpeed * Time.deltaTime;
 		}
 
         //Check if jump height is reached
@@ -233,9 +233,8 @@ public class Player : MonoBehaviour
 		}
 
         //Start acting gravity on the player to bring it back to the ground
-		if (reachedApex == true) //&& apexTimer > 0.2f)
+		if (reachedApex == true)
 		{
-            //apexTimer = 0.0f;
             float newPosition = Mathf.SmoothDamp(
                 transform.position.y,
                 0.15f,
@@ -246,8 +245,6 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, newPosition, transform.position.z);
 
             apexTimer = 0.0f;
-
-			//transform.position += gravity * Time.deltaTime;
 		}
 
         //Player land
@@ -271,7 +268,22 @@ public class Player : MonoBehaviour
         stumblingTimer = 0.0f;
     }
 
+    void EatPrey()
+    {
+        GameObject Prey = GameObject.Find("Prey");
 
+        if (Prey.transform.position.x < (transform.position.x + 2) &&
+            Prey.transform.position.x > (transform.position.x - 2))
+        {
+            if (currentStamina < 10)
+            {
+                //currentStamina += 1;
+                //Destroy(Prey);
+                Debug.Log("You caught your prey, you win!", gameObject);
+            }
+        }
+        
+    }
 }
 
 

@@ -16,7 +16,7 @@ public class Arm : MonoBehaviour
 	
 	}
 
-    void OnColliderEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Player")
         {
@@ -24,11 +24,20 @@ public class Arm : MonoBehaviour
             return;
         }
 
+        Component t = GetComponentInParent<Player>();
+
         if (col.gameObject.tag == "obstacle")
         {
-            Debug.Log("Destroyed!");
-            col.GetComponent<Obstacle>().Die();
-            return;
+            if (t.GetComponent<Player>().breaking == true)
+            {
+                Debug.Log("Destroyed!");
+
+                Destroy(col.gameObject);
+            }
+            else
+                Physics.IgnoreCollision(GameObject.Find("Arm Collider").GetComponent<BoxCollider>(), col.gameObject.GetComponent<BoxCollider>());
         }
+
+            return;
     }
 }

@@ -26,8 +26,6 @@ public class Body : MonoBehaviour
             return;
         }
 
-        player = GameObject.Find("Player");
-
         Component t = GetComponentInParent<Player>();
 
         if (col.gameObject.tag == "obstacle")

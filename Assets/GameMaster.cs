@@ -31,7 +31,17 @@ public class GameMaster : MonoBehaviour {
 
     public void OnGUI()
     {
-        GUI.Box(new Rect(10, 10, 80, 20), "Stamina");
+        GameObject player = GameObject.Find("PlayerChar");
+
+        int curStam = player.GetComponent<Player>().currentStamina;
+        int maxStam = player.GetComponent<Player>().maxStamina;
+
+        if (curStam > 0)
+        {
+            GUI.Box(new Rect(10, 10, 10 * curStam, 20), "");
+        }
+
+        GUI.Box(new Rect(10, 10, 10 * maxStam, 20), curStam.ToString() + "/" + maxStam.ToString());
 
 
     }

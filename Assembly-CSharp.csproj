@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Arm.cs" />
      <Compile Include="Assets\Body.cs" />
+     <Compile Include="Assets\Critter.cs" />
      <Compile Include="Assets\GameMaster.cs" />
      <Compile Include="Assets\Obstacle.cs" />
      <Compile Include="Assets\Player.cs" />
