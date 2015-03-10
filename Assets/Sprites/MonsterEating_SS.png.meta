@@ -13,6 +13,9 @@ TextureImporter:
     21300016: MonsterEating_SS_8
     21300018: MonsterEating_SS_9
     21300020: MonsterEating_SS_10
+    21300022: MonsterEating_SS_11
+    21300024: MonsterEating_SS_12
+    21300026: MonsterEating_SS_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -163,6 +166,36 @@ TextureImporter:
         height: 275
       alignment: 9
       pivot: {x: .663325787, y: .476963431}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterEating_SS_11
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 36
+        width: 153
+        height: 196
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterEating_SS_12
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 90
+        width: 117
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: MonsterEating_SS_13
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 70
+        width: 119
+        height: 147
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
